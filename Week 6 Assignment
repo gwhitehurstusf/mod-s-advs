@@ -1,0 +1,59 @@
+Question A: Represents number of ice cream purchases during the academic year for each of the five housmates: 8,14,16,10,11
+a) compute the mean for this: 
+mean(x)
+[1] 11.8
+b) select a random sampling of size 2 out of 5 members:
+> sample(2:14,5)
+[1] 10  2  8 12  9
+c) compute the mean and standard deviation of your sample:
+> mean(sample)
+[1] 3.5
+> sd(sample)
+[1] 1.290994
+> sd(x)
+[1] 3.193744
+d) compare the mean and standard deviation of your sample to the entire population of this set (x): mean(x) and sd(x) have larger values, therefore the entire population(x) will produce
+more ice cream in a five housemates data frame, then the sample, although the sample(s) has a greater chance at being more closely valued with the sd being smaller.  
+
+Question B: Suppose that the sample size n=100 and the population proportion p=0.95. 
+a) Does the sample proportion have appoximately a normal distribution? Explain. 
+Calculating the z-score: with alpha at 0.05:
+FORMULA:::::
+xbar= 11.8 ## sample mean
+m0=(x) ## hypothesized value
+sigma=3.193744 ## population standard deviation
+n=100 ## sample size
+z= (xbar-m0)/(sigma/sqrt(n))
+z ## test statistic
+
+alpha=0.05
+z.alpha=qnorm(1-alpha)
+z.alpha ##critical value
+
+PROBLEM VALUE::::
+xbar= 11.8 ## sample mean
+> m0=(x) ## hypothesized value
+> sigma=3.193744 ## population standard deviation
+> n=100 ## sample size
+> z= (xbar-m0)/(sigma/sqrt(n))
+> z ## test statistic
+[1]  11.898261  -6.888467 -13.150710   5.636018   2.504897
+> alpha=0.05
+> z.alpha=qnorm(1-alpha)
+> z.alpha ##critical value
+[1] 1.644854
+
+on the table, the z-score is 0.95053, 
+I would say yes, that the normal distribution is consistent with the probability. I'm going to try and add a graph to see the distribution in the section below. 
+
+b) What is the smallest value of n for which the sampling distribution of p is approximately normal? 
+For both sets of data, the answer is 1. 
+pnorm(100, mean=11.8, sd=3.193744)
+[1] 1
+> pnorm(100, mean=3.5, sd=1.290994)
+[1] 1
+
+Question C: Simulated coin tossing is probability better done using functional -rbinom than using function sample. Explain. 
+Ex: Toss a coin 10 times: rbinom(10, 1, 0.5), it's going to give you a set of data at random of what could happen for the tossing between heads or tails. And if you use this, it can be 
+useful for having a projection of real, probable results that can be forecasting of a live event. With sample, the data is just a set of numbers, a sample, of the data. It's not as broad
+as rbinom. 
