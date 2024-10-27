@@ -1,0 +1,53 @@
+QUESTION1
+1A)
+> x<- c(16,17,13,18,12,14,19,11,11,10)
+> y<- c(63,81,56,91,47,57,76,72,62,48)
+> lm(x~y)
+
+Call:
+lm(formula = x ~ y)
+
+1B)
+Coefficients:
+(Intercept)            y  
+     3.5068       0.1622  
+
+QUESTION2
+2A)
+lm(formula=discharge~waiting)
+
+Call:
+lm(formula = discharge ~ waiting)
+
+2B)
+Coefficients:
+(Intercept)      waiting  
+   -1.53317      0.06756  
+
+QUESTION3
+3A)
+input <- mtcars[,c("mpg","disp","hp","wt")]
+> print(head(input))
+                   mpg disp  hp    wt
+Mazda RX4         21.0  160 110 2.620
+Mazda RX4 Wag     21.0  160 110 2.875
+Datsun 710        22.8  108  93 2.320
+Hornet 4 Drive    21.4  258 110 3.215
+Hornet Sportabout 18.7  360 175 3.440
+Valiant           18.1  225 105 3.460
+> lm(formula = mpg ~ disp + hp + wt, data = input) 
+
+Call:
+lm(formula = mpg ~ disp + hp + wt, data = input)
+
+Coefficients:
+(Intercept)         disp           hp           wt  
+  37.105505    -0.000937    -0.031157    -3.800891  
+
+>>>>>>The multi-regression model and coefficients tells us that the above data describes the line going through the scatter plot of data, to say so in words.  What is known is that with
+the formula describing the output, we know the coeffcients multiply the predictor values of X.  
+
+QUESTION4
+SEE ATTATCHED PLOTTED GRAPH FOR ANSWER CREDIT
+
+
