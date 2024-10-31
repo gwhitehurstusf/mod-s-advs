@@ -1,0 +1,64 @@
+Question1
+ANOVA TEST FOR- 
+(A~B), 
+oneway.test(A~B)
+Error in oneway.test(A ~ B) : not enough observations
+
+aov.out = aov(A~B)
+> summary(aov.out)
+            Df Sum Sq Mean Sq F value Pr(>F)
+B            1  0.453  0.4528   0.511  0.514
+Residuals    4  3.547  0.8868               
+
+F(1,4)=0.511; p<0.514
+
+
+
+
+(A~C), 
+oneway.test(A~C)
+
+	One-way analysis of means (not assuming equal variances)
+
+data:  A and C
+F = 0.73973, num df = 2.0000, denom df = 1.8947, p-value = 0.5789
+
+aov.out = aov(A~C)
+> summary(aov.out)
+            Df Sum Sq Mean Sq F value Pr(>F)
+C            1   0.25  0.2500   0.267  0.633
+Residuals    4   3.75  0.9375               
+
+F(1,4)=0.267; p<0.633
+
+
+
+
+(B~C)
+oneway.test(B~C)
+
+	One-way analysis of means (not assuming equal variances)
+
+data:  B and C
+F = NaN, num df = 2, denom df = NaN, p-value = NA
+
+aov.out = aov(B~C)
+> summary(aov.out)
+            Df Sum Sq Mean Sq F value Pr(>F)
+C            1  0.000   0.000       0      1
+Residuals    4  8.833   2.208        
+
+F(1,4)=0;p<1
+
+  Mean,        Var,        Length: 
+A   9           0.8           6
+
+B   7.83333     1.7666667     6
+
+C   4           3.2           6
+
+SEE CHART ON SEPERATE PAGE!!!!!!!!!!!!!!!!!!
+
+
+Question 2, 
+(could not download the data set.....)
