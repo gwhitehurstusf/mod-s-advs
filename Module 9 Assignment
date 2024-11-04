@@ -1,0 +1,54 @@
+Question1, 
+1a, 
+Data Table, One Way for Purchased:
+> c<- purchased<-(c("No", "Yes", "No", "No", "Yes", "Yes", 
++                   "No", "Yes", "No", "Yes"))
+> results<- table(c)
+> results<- tables(c)
+No objects of class data.table exist in .GlobalEnv
+> results<- table(c)
+> results
+c
+ No Yes 
+  5   5 
+
+1b, 
+Data Table, Two Way for Purchased and Country:
+> a<- country<-(c("France", "Spain", "Germany", "Spain", "Germany",
++                 "France", "Spain", "France", "Germany", "France"))
+> results<-table(c,a)
+> results
+     a
+c     France Germany Spain
+  No       1       2     2
+  Yes      3       1     1
+> 
+
+Question2, 
+2a, 
+mtcars_df <- table(mtcars$gear, mtcars$cyl, dnn = c("Gears", "Cylinders"))
+> addmargins(mtcars_df)
+     Cylinders
+Gears  4  6  8 Sum
+  3    1  2 12  15
+  4    8  4  0  12
+  5    2  1  2   5
+  Sum 11  7 14  32
+
+
+2b,
+> prop.tables(mtcars_df)
+Error in prop.tables(mtcars_df) : could not find function "prop.tables"
+> prop.tables()
+Error in prop.tables() : could not find function "prop.tables"
+> prop.tables(mtcars_df)
+Error in prop.tables(mtcars_df) : could not find function "prop.tables"
+> proptables(mtcars_df)
+Error in proptables(mtcars_df) : could not find function "proptables"
+> prop.table(mtcars_df)
+     Cylinders
+Gears       4       6       8
+    3 0.03125 0.06250 0.37500
+    4 0.25000 0.12500 0.00000
+    5 0.06250 0.03125 0.06250
+> 
