@@ -1,0 +1,61 @@
+Question1: 
+> library(ISwR)
+> data("cystfibr")
+> lm(pemax ~ age + weight + bmp + fev1, data = cystfibr)
+
+Call:
+lm(formula = pemax ~ age + weight + bmp + fev1, data = cystfibr)
+
+Coefficients:
+(Intercept)          age       weight          bmp         fev1  
+    179.296       -3.418        2.688       -2.066        1.088  
+
+> anova(lm(pemax ~ age + weight + bmp + fev1, data=cystfibr))
+Analysis of Variance Table
+
+Response: pemax
+          Df  Sum Sq Mean Sq F value    Pr(>F)    
+age        1 10098.5 10098.5 18.4385 0.0003538 ***
+weight     1   945.2   945.2  1.7258 0.2038195    
+bmp        1  2379.7  2379.7  4.3450 0.0501483 .  
+fev1       1  2455.6  2455.6  4.4836 0.0469468 *  
+Residuals 20 10953.7   547.7                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+>>>>>>>Here are the concepts of the data above: 
+Looking at the data, there is no reference to this having connections, that being the AGE category specifically is striking.  Why? Because it's affect produces the amount of 18.4385 in the ANOVA, 
+as in the F value.  We know that the F value is crucial to an ANOVA because this explains the unexplained variance to explained, meaning the group AGE is significantly different than all
+the other groups.  Specifically, looking at the sum and mean, both are very large numbers as opposed to the other categories, with weight coming in last.  This AGE category can be best
+understood that the F value tells us the variation between all the other means of the group is 18 times greater due to random chance.  For some reason, AGE is a factor in this data set, 
+in an extreme and obtuse way. 
+
+Question2:
+ data("secher")
+> model_ad <- lm(log(bwt) ~ I(log(ad)), data=secher)
+> model_bpd <- lm(log(bwt) ~ I(log(bpd)), data=secher)
+> model_combined <- lm(log(bwt) ~ I(log(ad)) + I(log(bpd)), data=secher)
+> summary(model_combined)
+
+Call:
+lm(formula = log(bwt) ~ I(log(ad)) + I(log(bpd)), data = secher)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.35074 -0.06741 -0.00792  0.05750  0.36360 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  -5.8615     0.6617  -8.859 2.36e-14 ***
+I(log(ad))    1.4667     0.1467   9.998  < 2e-16 ***
+I(log(bpd))   1.5519     0.2294   6.764 8.09e-10 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1068 on 104 degrees of freedom
+Multiple R-squared:  0.8583,	Adjusted R-squared:  0.8556 
+F-statistic: 314.9 on 2 and 104 DF,  p-value: < 2.2e-16
+
+>>>>>>>>What is gained in having both parameters of data in the equation above?  The difference in having both is the range gives more information that isn't as specific, for understanding
+the overall xy values, and in that we can understand the need for data analysis.  
+
