@@ -1,0 +1,72 @@
+Week 11 assignment
+
+QUESTION1::::::
+
+library(ISwR)
+> data("ashina")
+> data <-(ashina)
+> results <-(ashina)
+> data
+   vas.active vas.plac grp
+1        -167     -102   1
+2        -127      -39   1
+3         -58       32   1
+4        -103       28   1
+5         -35       16   1
+6        -164      -42   1
+7          -3      -27   1
+8          25      -30   1
+9         -61      -47   1
+10        -45        8   1
+11        -38       12   2
+12         29       11   2
+13          2       -9   2
+14        -18       -1   2
+15        -74        3   2
+16        -72      -36   2
+> data("ashina")
+> data
+   vas.active vas.plac grp
+1        -167     -102   1
+2        -127      -39   1
+3         -58       32   1
+4        -103       28   1
+5         -35       16   1
+6        -164      -42   1
+7          -3      -27   1
+8          25      -30   1
+9         -61      -47   1
+10        -45        8   1
+11        -38       12   2
+12         29       11   2
+13          2       -9   2
+14        -18       -1   2
+15        -74        3   2
+16        -72      -36   2
+> ashina$subject <- factor(1:16)
+> attach(ashina)
+The following objects are masked from ashina (pos = 3):
+
+    grp, subject, vas.active, vas.plac
+
+The following objects are masked from ashina (pos = 4):
+
+    grp, subject, vas.active, vas.plac
+
+> act <- data.frame(vas=vas.active, subject, treat=1, period=grp)
+> plac <-data.frame(vas=vas.plac, subject, treat=0, period=grp)
+> summary(ashina)
+   vas.active         vas.plac            grp           subject  
+ Min.   :-167.00   Min.   :-102.00   Min.   :1.000   1      : 1  
+ 1st Qu.: -81.25   1st Qu.: -36.75   1st Qu.:1.000   2      : 1  
+ Median : -51.50   Median :  -5.00   Median :1.000   3      : 1  
+ Mean   : -56.81   Mean   : -13.94   Mean   :1.375   4      : 1  
+ 3rd Qu.: -14.25   3rd Qu.:  11.25   3rd Qu.:2.000   5      : 1  
+ Max.   :  29.00   Max.   :  32.00   Max.   :2.000   6      : 1  
+                                                     (Other):10  
+> plot(ashina)
+SEE ON SEPERATE PAGE FOR PLOT CHART data representation! 
+
+Question2::::
+(?)NEED HELP.
+
