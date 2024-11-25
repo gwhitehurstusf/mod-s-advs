@@ -1,0 +1,72 @@
+Module 12 Assignment
+Time Plot! 
+
+ Charge<-c(31.9,27,31.3,31,39.4,40.7,42.3,49.5,45,50,50.9,58.5,39.4,
++           36.2,40.5,44.6,46.8,44.7,52.2,54,48.8 ,55.8,58.7,63.4)
+> Chargetimeseries <-ts(Charge)
+> Chargetimeseries <-ts(Charge,frequency=12,start=c(2012,1))
+> Chargeforecast<-HoltWinters(Chargetimeseries)
+> Chargeforecast
+Holt-Winters exponential smoothing with trend and additive seasonal component.
+
+Call:
+HoltWinters(x = Chargetimeseries)
+
+Smoothing parameters:
+ alpha: 0.4786973
+ beta : 0
+ gamma: 0.1
+
+Coefficients:
+           [,1]
+a    51.4481469
+b     0.6088578
+s1   -6.6831338
+s2  -10.5867440
+s3   -6.6998393
+s4   -3.0320795
+s5   -1.4068647
+s6   -4.0422184
+s7    0.4727766
+s8    6.6378768
+s9    1.4431586
+s10   5.6809745
+s11   5.7999737
+s12  12.6976853
+> Chargetimeseries
+      Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct  Nov  Dec
+2012 31.9 27.0 31.3 31.0 39.4 40.7 42.3 49.5 45.0 50.0 50.9 58.5
+2013 39.4 36.2 40.5 44.6 46.8 44.7 52.2 54.0 48.8 55.8 58.7 63.4
+> rainseriesforecasts <- HoltWinters(rainseries, beta=FALSE, gamma=FALSE)
+Error: object 'rainseries' not found
+> HoltWinters(rainseries, beta=FALSE, gamma=FALSE)
+Error: object 'rainseries' not found
+> HoltWinters(chargetimeseries, beta=FALSE, gamma=FALSE)
+Error: object 'chargetimeseries' not found
+> HoltWinters(Chargetimeseries, beta=FALSE, gamma=FALSE)
+Holt-Winters exponential smoothing without trend and without seasonal component.
+
+Call:
+HoltWinters(x = Chargetimeseries, beta = FALSE, gamma = FALSE)
+
+Smoothing parameters:
+ alpha: 0.8232442
+ beta : FALSE
+ gamma: FALSE
+
+Coefficients:
+      [,1]
+a 62.44453
+> plot<- (Chargetimeseries)
+> plot
+      Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct  Nov  Dec
+2012 31.9 27.0 31.3 31.0 39.4 40.7 42.3 49.5 45.0 50.0 50.9 58.5
+2013 39.4 36.2 40.5 44.6 46.8 44.7 52.2 54.0 48.8 55.8 58.7 63.4
+> plot(Chargetimeseries)
+SEE OTHER PAGE FOR CHART!!! 
+
+What does the data mean? Looking at the important aspects of the time series plot, what can be understood about a time series plot is the purpose, which is to understand like a weather
+forecast predictions to aid in data expodential growth or decline.  For the series, when I applied the code to produce results, I can understand through the plot chart (located on the 
+additional referenced page) that the data has a steady incline and then around the year 2013, has a steady steep decline, and then back up again through the rest of 2013.  The alpha 
+parameter, located on line 53, tells us that the 0.82 is very close to 1, telling us these forecasts are based on recent data, leaning towards so expodentially, and that this means 
+the data is at risk of reaching a Type 1 Error, which makes sense due to the steep decline in the data from 2012 to 2013 there was a drop to literally zero. 
